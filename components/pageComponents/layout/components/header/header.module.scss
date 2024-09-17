@@ -1,0 +1,49 @@
+@import "@/styles/variables.scss";
+
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px 24px;
+  width: 100%;
+  margin-top: 48px;
+
+  @media (max-width: $media-m) {
+    margin-top: 24px;
+  }
+  @media (max-width: $media-s) {
+    flex-direction: column-reverse;
+  }
+}
+
+.title {
+  font-size: 57px;
+  line-height: 112%;
+  font-weight: 400;
+
+  @media (max-width: $media-m) {
+    font-size: 40px;
+  }
+  @media (max-width: $media-s) {
+    font-size: 30px;
+  }
+}
+
+.subTitle {
+  margin-top: 8px;
+  font-size: 28px;
+  line-height: 129%;
+  font-weight: 400;
+
+  @media (max-width: $media-m) {
+    font-size: 24px;
+  }
+  @media (max-width: $media-s) {
+    font-size: 20px;
+  }
+}
+
+.logo {
+  @media (max-width: $media-m) {
+    max-width: 120px;
+  }
+}

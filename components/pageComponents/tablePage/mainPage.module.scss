@@ -1,0 +1,19 @@
+@import "@/styles/variables.scss";
+
+.btnToJson {
+    position: relative;
+    max-width: 132px;
+    margin-top: 48px;
+    padding-left: 32px;
+  
+    svg {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+  
+      path {
+        stroke: $func-complete;
+      }
+    }
+  }

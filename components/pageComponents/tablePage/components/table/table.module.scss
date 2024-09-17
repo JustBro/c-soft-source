@@ -1,0 +1,233 @@
+@import "@/styles/variables.scss";
+@import "@/styles/animations.scss";
+
+.table {
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse;
+
+  thead {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+
+    th {
+      &:hover {
+        button {
+          filter: opacity(1);
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:hover {
+        button {
+          filter: opacity(1);
+        }
+      }
+
+      td {
+        &:last-child {
+          padding: 11px 8px;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  tr {
+    animation: fade 0.3s ease-in-out;
+  }
+
+  th {
+    position: relative;
+    z-index: 1;
+    min-width: 240px;
+    border-bottom: 1px solid $theme-border;
+    background-color: $bg-primary;
+    animation: fade 0.3s ease-in-out;
+
+    &:last-child {
+      width: 100%;
+      min-width: unset;
+      padding: 11px 8px;
+      text-align: left;
+
+      button {
+        position: relative;
+        transform: none;
+        filter: opacity(1);
+      }
+    }
+
+    input {
+      padding: 11px 8px;
+      padding-right: 30px;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+
+      &:hover {
+        path {
+          fill: $func-error;
+        }
+      }
+    }
+  }
+
+  td {
+    min-width: 240px;
+    border-bottom: 1px solid $theme-border;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $bg-hover;
+    }
+
+    input {
+      color: $typography-primary;
+      padding: 11px 8px;
+    }
+
+    button {
+      &:hover {
+        path {
+          fill: $func-error;
+        }
+      }
+    }
+  }
+
+  td,
+  th {
+    &:last-child {
+      border-bottom: none;
+    }
+  } 
+
+  input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    color: $typography-secondary;
+    cursor: pointer;
+  }
+
+  button {
+    filter: opacity(0);
+    transition: filter 0.3s ease-in-out;
+  }
+
+  tfoot {
+    position: sticky;
+    left: 0;
+
+    td {
+      padding: 11px 8px;
+      border-bottom: none;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    button {
+      filter: opacity(1);
+    }
+
+    &:hover {
+      path {
+        stroke: $func-complete;
+      }
+    }
+  }
+}
+
+.tableWrapper {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  max-height: calc(100svh - 292px);
+  margin-bottom: 48px;
+  margin-top: 8px;
+
+  @media (max-width: $media-m) {
+    max-height: calc(100svh - 274px);
+  }
+  @media (max-width: $media-s) {
+    max-height: calc(100svh - 356px);
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bg-primary;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $theme-border;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: $theme-shadow;
+  }
+}
+
+.columnTypes {
+  position: absolute;
+  top: 0;
+  right: -16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  transform: translateX(100%);
+  background-color: $bg-primary;
+  box-shadow: 0 4px 20px $theme-shadow;
+  animation: showColumnTypes 0.3s ease-in-out;
+
+  label {
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:first-child {
+      border-bottom: 1px solid $theme-border;
+    }
+    &:hover {
+      background-color: $bg-hover;
+    }
+  }
+  input {
+    display: none;
+  }
+}
+
+.btnAddColumn {
+  position: relative;
+
+  &:hover {
+    path {
+      stroke: $func-complete;
+    }
+  }
+}

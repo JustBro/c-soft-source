@@ -1,0 +1,40 @@
+@import "@/styles/variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  color: $typography-primary;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: $bg-primary;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    path {
+      transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1840px;
+  margin: auto;
+  padding: 0 24px;
+
+  @media (max-width: $media-s) {
+    padding: 0 16px;
+  }
+}
